@@ -1,0 +1,30 @@
+@import "details.css";
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+h1,h2,h3 {
+    font-family: 'Amatic SC', cursive;
+}
+
+h1 {
+    font-size: 8em;
+    color: rgb(196, 0, 0);
+    text-align: center;
+}
+
+h2{
+
+}
+
+h3{
+    font-size: 3em;
+    color:rgb(197, 145, 67);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}

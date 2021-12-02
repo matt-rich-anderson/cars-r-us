@@ -1,0 +1,7 @@
+.options{
+    display: flex;
+}
+
+.individualOptions{
+    flex-basis: 25%;
+}
