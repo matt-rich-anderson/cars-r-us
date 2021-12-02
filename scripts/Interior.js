@@ -11,3 +11,11 @@ export const Interiors = () => {
     html += "</ul>"
     return html
 }
+
+document.addEventListener("change",(changeEvent) => {
+        if (changeEvent.target.name === "interior") {
+            const chosenOption = changeEvent.target.value
+            console.log(chosenOption)
+        }
+    }
+)
