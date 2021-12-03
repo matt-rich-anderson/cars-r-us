@@ -5,33 +5,28 @@ const wheels = getWheels()
 const interiors = getInteriors()
 const technologies = getTechnologies()
 
-
-
 const buildOrderListItem = (order) => {
 
     const foundPaint = paints.find(
         (paint) => {return paint.id === order.paintId}) 
     const foundWheel = wheels.find(
         (wheel) => {return wheel.id === order.wheelId})
-    const foundInteriors = interiors.find(
+    const foundInterior = interiors.find(
         (interior) => {return interior.id === order.interiorId})
-    const foundTechnologies = technologies.find(
-        (technologies) => {return technologies.id === order.technologiesId})
+    const foundTechnology = technologies.find(
+        (tech) => {return tech.id === order.techId})
      
-    // const totalCost = foundPaint.price + foundWheel.price + foundInteriors.price +  foundTechnologies.price 
+    const totalCost = foundPaint.price + foundWheel.price + foundInterior.price + foundTechnology.price 
 
-    // const costString = totalCost.toLocaleString("en-US", {
-    //     style: "currency",
-    //     currency: "USD"
-    // })
+    const costString = totalCost.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+    })
     
     return `<li>
-        Your order # is ${order.id}, and was placed at ${order.timestamp}
+        ${foundPaint.color} car with ${foundWheel.wheel} wheels, ${foundInterior.material} interior, and ${foundTechnology.tech} for a total cost of ${costString}
     </li>`
 }
-
-
-
 
 export const Orders = () => {
     const orders = getOrders()

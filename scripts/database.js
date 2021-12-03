@@ -67,7 +67,7 @@ export const addCustomOrder = () => {
     const newOrder = {...database.orderBuilder}
 
     const lastIndex = database.customOrders.length - 1
-    if(lastIndex = -1){
+    if(lastIndex === -1){
         newOrder.id = 1
     }
     else {
