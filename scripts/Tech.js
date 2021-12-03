@@ -1,4 +1,4 @@
-import { getTechnologies } from "./database.js";
+import { getTechnologies, setTech } from "./database.js";
 
 const technologies= getTechnologies()
 
@@ -11,3 +11,10 @@ export const Technologies = () => {
     html += "</ul>"
     return html
 }
+
+document.addEventListener("change",(changeEvent) => {
+    if (changeEvent.target.name === "technology") {
+        setTech(parseInt(changeEvent.target.value)) 
+    }
+}
+)

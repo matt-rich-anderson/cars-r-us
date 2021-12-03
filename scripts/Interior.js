@@ -1,4 +1,4 @@
-import { getInteriors } from "./database.js";
+import { getInteriors, setInterior } from "./database.js";
 
 const interiors= getInteriors()
 
@@ -13,9 +13,8 @@ export const Interiors = () => {
 }
 
 document.addEventListener("change",(changeEvent) => {
-        if (changeEvent.target.name === "interior") {
-            const chosenOption = changeEvent.target.value
-            console.log(chosenOption)
-        }
+    if (changeEvent.target.name === "interior") {
+        setInterior(parseInt(changeEvent.target.value)) 
     }
+}
 )

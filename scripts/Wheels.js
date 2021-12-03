@@ -1,4 +1,4 @@
-import { getWheels } from "./database.js";
+import { getWheels, setWheel } from "./database.js";
 
 const wheels= getWheels()
 
@@ -11,3 +11,10 @@ export const Wheels = () => {
     html += "</ul>"
     return html
 }
+
+document.addEventListener("change",(changeEvent) => {
+    if (changeEvent.target.name === "wheel") {
+        setWheel(parseInt(changeEvent.target.value)) 
+    }
+}
+)

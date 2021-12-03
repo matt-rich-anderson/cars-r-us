@@ -42,3 +42,43 @@ export const getInteriors = () => {
 export const getTechnologies = () => {
     return database.technologies.map(tech => ({...tech}))
 }
+
+export const getOrders = () => {
+    return database.customOrders.map(order => ({...order}))
+}
+
+export const setPaint = (id) => {
+    database.orderBuilder.paintId = id
+}
+
+export const setWheel = (id) => {
+    database.orderBuilder.wheelId = id
+}
+
+export const setInterior = (id) => {
+    database.orderBuilder.interiorId = id
+}
+
+export const setTech = (id) => {
+    database.orderBuilder.techId = id
+}
+
+export const addCustomOrder = () => {
+    const newOrder = {...database.orderBuilder}
+
+    const lastIndex = database.customOrders.length - 1
+    if(lastIndex = -1){
+        newOrder.id = 1
+    }
+    else {
+        newOrder.id = database.customOrders[lastIndex].id + 1
+    }
+    
+    newOrder.timestamp = Date.now()
+
+    database.customOrders.push(newOrder)
+
+    database.orderBuilder = {}
+
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}

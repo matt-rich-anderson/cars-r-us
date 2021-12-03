@@ -1,4 +1,4 @@
-import { getPaints } from "./database.js";
+import { getPaints, setPaint } from "./database.js";
 
 const paints= getPaints()
 
@@ -11,3 +11,10 @@ export const paintColors = () => {
     html += "</ul>"
     return html
 }
+
+document.addEventListener("change",(changeEvent) => {
+    if (changeEvent.target.name === "paint") {
+        setPaint(parseInt(changeEvent.target.value)) 
+    }
+}
+)
